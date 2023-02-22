@@ -5,4 +5,4 @@ PHP and uses a MySQL backend, so your site must use these two for the backend. M
 for static websites that want to add simple blogging functionality without the need to write a custom
 CMS or use something like WordPress and decrease performance.
 
-## Setup
+# Setup Guide
