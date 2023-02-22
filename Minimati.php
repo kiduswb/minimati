@@ -5,6 +5,13 @@
      * Written by Kidus Bewket (https://kidus.ca)
      * Released under the MIT License
      */
+
+    # EDIT THESE VALUES TO CONNECT MINIMATI TO YOUR DATABASE! #
+    
+    const DB_HOST = "localhost"; // Database Host
+    const DB_USER = "root"; // Database Username
+    const DB_PASS = ""; // Database Password
+    const DB_NAME = "minimati"; // Database Name
         
     /**
      * Article
@@ -24,7 +31,7 @@
     # General Functions
 
     function sql_query($query) {
-        $sql = new mysqli("localhost", "root", "", "");
+        $sql = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     }
 
     /**
@@ -53,11 +60,54 @@
     /**
      * redir
      * A cleaner redirect? Perhaps.
-     * @param  mixed $url
+     * @param  string $url
      * @return void
      */
     function redir($url) {
         header("Location: $url");
+    }
+
+    # Blogging and Publishing
+    
+    /**
+     * publish
+     * Adds blog article to database
+     * @param  Article $article
+     * @return void
+     */
+    function publish($article) {
+        //...
+    }
+    
+    /**
+     * delete
+     * Deletes article from database
+     * @param  int $articleID
+     * @return void
+     */
+    function delete($articleID) {
+        //...
+    }
+    
+    /**
+     * fetch_articles
+     * Fetch all articles from $start to $limit
+     * @param  int $start
+     * @param  int $limit
+     * @return void
+     */
+    function fetch_articles($start, $limit) {
+        //...
+    }
+    
+    /**
+     * fetch_article
+     * Fetch the details of a particular article
+     * @param  string $slug
+     * @return void
+     */
+    function fetch_article($slug) {
+        //...
     }
 
 ?>

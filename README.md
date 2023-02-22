@@ -25,7 +25,7 @@ inside the page you want to show a list of your articles in, as well as the page
 on your website:
 
 - `fetch_article($slug)`: Fetch article details in form of a neat `Article` class. Uses the 'slug' (URL of the article) to fetch article data from the database.
-- `fetch_articles($limit)`: Fetch `limit` articles. Articles are sorted by time published. Returns array of Article objects.
+- `fetch_articles($start, $limit)`: Fetch `limit` articles, starting from `start`. Please refer to 'examples' directory to understand how Minimati's pagination system works. Articles are sorted by time published. Function returns array of Article objects.
 
 In short, you can use these two functions to load articles into your website, and get individual article data in the handy `Article` class. I've currently implemented this CMS in my personal website.
 
