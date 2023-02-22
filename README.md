@@ -25,3 +25,7 @@ on your website:
 
 - `fetch_article($slug)`: Fetch article details in form of a neat `Article` class. Uses the 'slug' (URL of the article) to fetch article data from the database.
 - `fetch_articles($limit)`: Fetch `limit` articles. Articles are sorted by time published. Returns array of Article objects.
+
+In short, you can use these two functions to load articles into your website, and get individual article data in the handy `Article` class. I've currently implemented this CMS in my personal website.
+
+*Happy blogging!*
