@@ -28,4 +28,18 @@ on your website:
 
 In short, you can use these two functions to load articles into your website, and get individual article data in the handy `Article` class. I've currently implemented this CMS in my personal website.
 
+# FAQ
+
+*Is there any way to measure interaction metrics?*
+<br>
+
+It would be pointless to add it to Minimati, since you can easily use other tools that don't require a database.
+
+*How do I add comments and replies to my blog?*
+<br>
+
+I haven't come around to implementing that yet, as it would over-complicate things. For now, check out the easy-to-use service [Disqus](https://disqus.com).
+
+<br>
+
 *Happy blogging!*
