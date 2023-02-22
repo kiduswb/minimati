@@ -12,7 +12,7 @@ Here's a simple step-by-step guide to get Minimati up and running on top of your
 <ol>
     <li>Move Minimati's root folder to your website's root folder. You can also clone this repository into your website's root directory</li>
     <li>Import the `db.sql` file into your MySQL database</li>
-    <li>Head over to `[your root folder]/minimati'</li>
+    <li>Head over to `[your root folder]/minimati`</li>
     <li>Login (default admin password is "`password`"), then change your password.</li>
 </ol>
 
