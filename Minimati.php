@@ -12,7 +12,13 @@
      */
     class Article
     {
-        //..
+        public $ID;
+        public $slug;
+        public $title;
+        public $subtitle;
+        public $content;
+        public $photo;
+        public $timestamp;
     }
 
     

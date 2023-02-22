@@ -28,6 +28,8 @@ on your website:
 
 In short, you can use these two functions to load articles into your website, and get individual article data in the handy `Article` class. I've currently implemented this CMS in my personal website.
 
+<b>For a simple example, check out the 'example' directory in this repo.</b>
+
 # FAQ
 
 *Is there any way to measure interaction metrics?* <br>
