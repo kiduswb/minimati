@@ -10,10 +10,11 @@ CMS or use something like WordPress.
 Here's a simple step-by-step guide to get Minimati up and running on top of your website.
 
 <ol>
-    <li>Move Minimati's root folder to your website's root folder. You can also clone this repository into your website's root directory</li>
+    <li>Move Minimati's root folder to your website's root folder&mdash;you can also clone this repository into your website's root directory</li>
     <li>Import the <code>db.sql</code> file into your MySQL database</li>
-    <li>Head over to <code>[your root folder]/minimati</code></li>
-    <li>Login (default admin password is "password"), then change your password.</li>
+    <li>Edit the <code>Minimati.php</code> file and add your database login info</li>
+    <li>Navigate to <code>[your website]/minimati</code> in your browser</li>
+    <li>Login (default admin password is "password"), then change your password</li>
 </ol>
 
 After these steps, you can begin publishing articles on your website's server. To show 
