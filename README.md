@@ -15,19 +15,31 @@ Here's a simple step-by-step guide to get Minimati up and running on top of your
     <li>Edit the <code>Minimati.php</code> file and add your database login info</li>
     <li>Navigate to <code>[your website]/minimati</code> in your browser</li>
     <li>Login (default admin password is "password"), then change your password</li>
+    <li><b>IMPORTANT!</b> Make sure to edit your admin settings and specify which directory you'd like to upload
+    article photos to. By default, the directory is `'../assets/images/blog'`.</li>
 </ol>
 
-After these steps, you can begin publishing articles on your website's server. To show 
-these articles, you'll need to `require_once` the `Minimati.php` file located in the root directory 
-inside the page you want to show a list of your articles in, as well as the page that users go visit to read individual articles.<br>
+After these steps, you can begin publishing blog articles to your website's server. To display 
+these articles, you'll need to refer to the simple example I've built for you in the 'example' directory
+of this repo.<br>
 
-`Minimati.php` has the following classes and functions that you can use to easily fetch articles you've published
-on your website:
+# General Guide
+
+`Minimati.php` has the following two functions that you can use to fetch the articles you've published on your website:
 
 - `fetch_article($slug)`: Fetch article details in form of a neat `Article` class. Uses the 'slug' (URL of the article) to fetch article data from the database.
-- `fetch_articles($start, $limit)`: Fetch `limit` articles, starting from `start`. Please refer to 'examples' directory to understand how Minimati's pagination system works. Articles are sorted by time published. Function returns array of Article objects.
+- `fetch_articles($start, $limit)`: Fetch `limit` articles, starting from `start`. Please refer to the 'example' directory to understand how Minimati's pagination system works. Articles are sorted by time published. This function returns array of `Article` objects.
 
-In short, you can use these two functions to load articles into your website, and get individual article data in the handy `Article` class. I've currently implemented this CMS in my personal website.
+You can an article's contents from the handy `Article` class. The `Article` class contains the following important members:
+
+- `slug`
+- `title`
+- `subtitle`
+- `content`
+- `timestamp`
+- `photo`
+
+I've currently implemented this CMS in my personal website. It's been very helpful for my personal use-case.
 
 <b>For a simple example, check out the 'example' directory in this repo.</b>
 

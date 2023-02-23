@@ -29,9 +29,21 @@
     }
 
     # General Functions
-
+    
+    /**
+     * sql_query
+     * Performs a MySQL Query and returns the result in form of a MySQLi object
+     * @param  mixed $query
+     * @return void
+     */
     function sql_query($query) {
         $sql = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        if(!$sql) throw new Exception("Minimati - Failed to connect to database.");
+        else {
+            $result = $sql->query($query);
+            $sql->close();
+            return $result;
+        }
     }
 
     /**
