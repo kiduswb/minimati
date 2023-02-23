@@ -1,4 +1,5 @@
-# Minimati <img src="assets/img/icon.png">
+<img src="assets/img/icon.png" width="40px" height="40px">
+# Minimati 
 
 Minimati is a simple, lightweight and open-source CMS for managing blog posts in your website. It's written in 
 PHP and uses a MySQL backend, so your site must use these two for its backend. Minimati is best
