@@ -130,6 +130,15 @@
     function article_count() {
         //...
     }
+    
+    /**
+     * edit_count
+     * Returns the number of edits made so far
+     * @return void
+     */
+    function edit_count() {
+        //...
+    }
 
     # Administrator Management
 

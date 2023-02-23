@@ -86,7 +86,7 @@
 		<!-- Latest Articles -->
 		<div class="row">
 			<div class="col-lg-12 py-4 mx-auto">
-				<div class="card">
+				<div class="card shadow">
 					<div class="card-header text-white bg-primary">
 						<h3>Recently Published</h3>
 					</div>
@@ -106,7 +106,8 @@
 									<td><a href="edit.php?ID=ID" class="btn btn-sm btn-outline-primary">Edit</a></td>
 								</tr>
 							</tbody>
-						</table>
+						</table><br>
+						<a href="edit.php">View All Articles &rarr;</a>
 					</div>
 				</div>
 			</div>

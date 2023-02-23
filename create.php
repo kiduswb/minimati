@@ -59,7 +59,7 @@
     
     <div class="container py-4">
         <div class="row">
-            <div class="col-lg-8 py-2 mx-auto">
+            <div class="col-lg-9 py-2 mx-auto">
                 <form action="create.php" method="POST">
                     <div class="form-group">
                         <h4 class="text-center">Publish New Article</h4>

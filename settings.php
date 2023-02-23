@@ -56,9 +56,86 @@
 		</div>
 	</nav>
 
-    <!-- Change Password -->
+	<div class="container py-4">
+		<div class="row">
+			<div class="col-lg-12 py-3">
+				<h2 class="text-center">Settings</h2>
+			</div>
 
-    <!-- Change Upload Directory -->
+			<!-- Change Password -->
+			<div class="col-lg-6 py-2">
+				<div class="card shadow mb-3">
+					<div class="card-body">
+						<h4>Update Password</h4><hr>
+						<form action="settings.php" method="POST">
+							<?php
+								if (isset($_GET['pe'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-warning">Error - Old password not valid.</div>
+									</div>
+_END;
+
+								else if (isset($_GET['ne'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-warning">Error - Passwords don't match.</div>
+									</div>
+_END;
+								else if (isset($_GET['ps'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-success">Password updated successfully.</div>
+									</div>
+_END;
+							?>
+							<div class="form-group">
+								<input type="password" class="form-control" name="oldpassword" required placeholder="Old Password">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" name="newpassword" required placeholder="New Password">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" name="newpassword2" required placeholder="Confirm New Password">
+							</div>
+							<div class="form-group">
+								<button type="submit" name="updatepass" class="btn btn-outline-primary">Update Password</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- Change Upload Directory -->
+			<div class="col-lg-6 py-2">
+				<div class="card shadow mb-3">
+					<div class="card-body">
+						<h4>Update Image Upload Directory</h4><hr>
+						<form action="settings.php" method="POST">
+							<?php
+								if (isset($_GET['de'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-warning">Error - Directory not found.</div>
+									</div>
+_END;
+								else if (isset($_GET['ds'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-success">Image upload directory changed successfully.</div>
+									</div>
+_END;
+							?>
+							<div class="form-group">
+								Current Directory is <code>../assets/images/blog/</code>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" required placeholder="Enter New Directory" name="dir">
+							</div>
+							<div class="form-group">
+								<button type="submit" name="updatedir" class="btn btn-outline-primary">Update Directory</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
     <footer class="footer">
       	<div class="container">
