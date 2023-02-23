@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 	<link rel="icon" href="assets/img/icon.png">
 	<title>Minimati - Publish New Article</title>
 </head>
@@ -55,6 +56,49 @@
 			</div>
 		</div>
 	</nav>
+    
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-8 py-2 mx-auto">
+                <form action="create.php" method="POST">
+                    <div class="form-group">
+                        <h4 class="text-center">Publish New Article</h4>
+                    </div>
+                    <?php
+						if (isset($_GET['e'])) echo <<<_END
+                            <div class="form-group">
+                                <div class="alert alert-warning">Error - Unable to publish, please check your database settings.</div>
+                            </div>
+_END;
+
+						else if (isset($_GET['s'])) echo <<<_END
+                            <div class="form-group">
+                                <div class="alert alert-success">Article published successfully.</div>
+                            </div>
+_END;
+					?>
+                    <div class="form-group">
+                        <input type="text" class="form-control" required name="title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" required name="subtitle" placeholder="Subtitle">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="content" id="content" required class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-muted">Article Image</label>
+                        <input type="file" name="photo" class="form-control">
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-outline-primary col-6" name="publish">
+                            Publish Article <i class="fa fa-arrow-up-right-from-square"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
       	<div class="container">
@@ -65,6 +109,9 @@
       	</div>
     </footer>
 
+    <script>
+        CKEDITOR.replace('content');
+    </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/main.js"></script>

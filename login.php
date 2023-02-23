@@ -52,16 +52,16 @@
 								<img src="assets/img/icon.png" class="w-25 img-fluid" alt="Minimati">
 							</div>
 							<?php
-							if (isset($_GET['e'])) echo <<<_END
-                                <div class="form-group">
-                                    <div class="alert alert-warning">Error - Invalid Password</div>
-                                </div>
+								if (isset($_GET['e'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-warning">Error - Invalid Password</div>
+									</div>
 _END;
 
-							else if (isset($_GET['ls'])) echo <<<_END
-                                <div class="form-group">
-                                    <div class="alert alert-success">You've been logged out.</div>
-                                </div>
+								else if (isset($_GET['ls'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-success">You've been logged out.</div>
+									</div>
 _END;
 							?>
 							<div class="form-group">
