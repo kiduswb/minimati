@@ -23,14 +23,14 @@ After these steps, you can begin publishing blog articles to your website's serv
 these articles, you'll need to refer to the simple example I've built for you in the 'example' directory
 of this repo.<br>
 
-# General Guide
+# Usage Guide
 
 `Minimati.php` has the following two functions that you can use to fetch the articles you've published on your website:
 
 - `fetch_article($slug)`: Fetch article details in form of a neat `Article` class. Uses the 'slug' (URL of the article) to fetch article data from the database.
 - `fetch_articles($start, $limit)`: Fetch `limit` articles, starting from `start`. Please refer to the 'example' directory to understand how Minimati's pagination system works. Articles are sorted by time published. This function returns array of `Article` objects.
 
-You can an article's contents from the handy `Article` class. The `Article` class contains the following important members:
+You can get an article's contents from the handy `Article` class. The `Article` class contains the following important members:
 
 - `slug`
 - `title`
@@ -39,6 +39,9 @@ You can an article's contents from the handy `Article` class. The `Article` clas
 - `timestamp`
 - `photo`
 
+You use these members to display an individual article's content on your website. Please check out the 
+'example' directory to see this in action.
+<br>
 I've currently implemented this CMS in my personal website. It's been very helpful for my personal use-case.
 
 <b>For a simple example, check out the 'example' directory in this repo.</b>
