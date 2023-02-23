@@ -60,3 +60,11 @@ I haven't come around to implementing that yet, as it would over-complicate thin
 <br>
 
 *Happy blogging!*
+
+
+TODO
+====
+
+- Publish Article
+- Pick Articles + Edit Article
+- Settings

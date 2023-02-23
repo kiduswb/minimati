@@ -63,7 +63,7 @@
     <footer class="footer">
       	<div class="container">
        		<span class="text-muted">
-				<a href="https://github/kiduswb/minimati">Minimati</a> - 
+				<a href="https://github.com/kiduswb/minimati">Minimati</a> - 
 				Open-source built with <i class="fa fa-heart text-danger"></i>
 			</span>
       	</div>
