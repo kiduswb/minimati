@@ -1,4 +1,5 @@
-<img src="assets/img/icon.png" width="40px" height="40px">
+<img src="assets/img/icon.png" width="60px" height="60px">
+
 # Minimati 
 
 Minimati is a simple, lightweight and open-source CMS for managing blog posts in your website. It's written in 
