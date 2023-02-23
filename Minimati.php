@@ -39,11 +39,11 @@
     function sql_query($query) {
         $sql = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if(!$sql) throw new Exception("Minimati - Failed to connect to database.");
-        else {
-            $result = $sql->query($query);
-            $sql->close();
-            return $result;
-        }
+       
+        $result = $sql->query($query);
+        $sql->close();
+        return $result;
+        
     }
 
     /**
@@ -120,6 +120,26 @@
      */
     function fetch_article($slug) {
         //...
+    }
+    
+    /**
+     * article_count
+     * Returns the number of articles in the database
+     * @return void
+     */
+    function article_count() {
+        //...
+    }
+
+    # Administrator Management
+
+    function admin_login($password) {
+        $result = sql_query("SELECT * FROM `admin` WHERE 1");
+        if(password_verify($password, $result->fetch_assoc()['pwd_hash'])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 ?>
