@@ -30,7 +30,7 @@
 	if(!isset($_SESSION['edit_page'])) $_SESSION['edit_page'] = 1;
     $total_cnt = article_count();
 
-    $limit = 25;
+    $limit = 20;
 	$page = $_SESSION['edit_page'];
 
 	if($page) $start = ($page - 1) * $limit;
@@ -143,8 +143,19 @@ _END;
 			
 			<!-- Pagination -->
 			<div class="col-lg-12 py-3 mx-auto">
-				<a href="#" class="btn btn-outline-primary">&larr; Prev Page</a>
-				<a href="#" class="btn btn-outline-primary">Next Page &rarr;</a>
+				<?php 
+                        if($page > 1) {
+                            echo <<<_END
+							<a href="pagination_edits.php?p=1" class="btn btn-outline-primary">&larr; Prev Page</a>
+_END;
+                        }
+
+                        if($page != $lastpage) {
+                            echo <<<_END
+							<a href="pagination_edits.php?n=1" class="btn btn-outline-primary">Next Page &rarr;</a>
+_END;
+                        }
+                    ?>
 			</div>
 
 		</div>
@@ -156,6 +167,7 @@ _END;
                 <form action="edit.php?ID=<?php echo $_GET['ID']; ?>" method="POST">
                     <div class="form-group">
                         <h4 class="text-center">Edit Article</h4>
+						<a href="edit.php">&larr; Return to Article List</a>
                     </div>
                     <?php
 						if (isset($_GET['e'])) echo <<<_END

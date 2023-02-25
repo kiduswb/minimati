@@ -108,7 +108,7 @@
 										echo <<<_END
 										<tr>
 											<td>$date</td>
-											<td>$ar->title</td>
+											<td><span>$ar->title</span></td>
 											<td><a href="edit.php?ID=$ar->ID" class="btn btn-sm btn-outline-primary">Edit</a></td>
 										</tr>
 _END;

@@ -60,12 +60,3 @@ I haven't come around to implementing that yet, as it would over-complicate thin
 <br>
 
 *Happy blogging!*
-
-
-TODO
-====
-
-- Validate Image File
-- Shorten title CSS
-- Edit Count
-- Pagination

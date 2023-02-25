@@ -21,17 +21,24 @@
         $article->content = addslashes($_POST['content']);
         $article->timestamp = time();
 
-		$upload_dir = fetch_upload_dir();
+		$allowed = array('gif', 'png', 'jpg', 'jpeg', 'webp');
+		$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+		
+		if (!in_array($ext, $allowed)) {
+			redir("create.php?pe=1");
+			die();
+		}
 
-        mkdir($upload_dir.$post->ID);
-        $target_file = $upload_dir."$article->ID/" . basename($_FILES["photo"]["name"]);
+		$upload_dir = fetch_upload_dir();
+        mkdir($upload_dir.'/'.$article->ID);
+        $target_file = $upload_dir."/$article->ID/" . basename($_FILES["photo"]["name"]);
         move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
         $article->photo = $_FILES['photo']['name'];
 
         if(publish($article)) {
-			header("Location: create.php?s=1");
+			redir("create.php?s=1");
 		} else {
-			header("Location: create.php?e=1");
+			redir("create.php?e=1");
 		}
         
 	}
@@ -96,6 +103,12 @@
                             </div>
 _END;
 
+						else if (isset($_GET['pe'])) echo <<<_END
+                            <div class="form-group">
+                                <div class="alert alert-warning">Error - Invalid photo file format. Please upload a valid photo.</div>
+                            </div>
+_END;
+
 						else if (isset($_GET['s'])) echo <<<_END
                             <div class="form-group">
                                 <div class="alert alert-success">Article published successfully.</div>
@@ -113,7 +126,7 @@ _END;
                     </div>
                     <div class="form-group">
                         <label class="text-muted">Article Image</label>
-                        <input type="file" name="photo" class="form-control">
+                        <input type="file" required name="photo" class="form-control">
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-primary col-6" name="publish">

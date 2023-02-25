@@ -12,7 +12,10 @@
 	if (!isset($_SESSION['minimati_admin'])) redir("login.php");
 
 	if(isset($_POST['updatedir'])) {
-		if(!is_dir($_POST['dir'])) redir("settings.php?de=1");
+		// Directory validity
+		if(substr($_POST['dir'], -1) == '/') redir("settings.php?de=1");
+		else if(!is_dir($_POST['dir'])) redir("settings.php?de=1");
+		// Directory exists and is valid
 		else {
 			update_upload_dir($_POST['dir']);
 			redir("settings.php?ds=1");
@@ -129,7 +132,7 @@ _END;
 							<?php
 								if (isset($_GET['de'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-warning">Error - Directory not found.</div>
+										<div class="alert alert-warning">Error - Invalid or inexistent directory.</div>
 									</div>
 _END;
 								else if (isset($_GET['ds'])) echo <<<_END
