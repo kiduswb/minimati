@@ -11,6 +11,31 @@
 
 	if (!isset($_SESSION['minimati_admin'])) redir("login.php");
 
+	if(isset($_POST['publish'])) {
+		$article = new Article(0);
+
+        $article->ID = rand() % 9999;
+        $article->slug = slugify($_POST['title']);
+        $article->title = addslashes($_POST['title']);
+        $article->subtitle = addslashes($_POST['subtitle']);
+        $article->content = addslashes($_POST['content']);
+        $article->timestamp = time();
+
+		$upload_dir = fetch_upload_dir();
+
+        mkdir($upload_dir.$post->ID);
+        $target_file = $upload_dir."$article->ID/" . basename($_FILES["photo"]["name"]);
+        move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
+        $article->photo = $_FILES['photo']['name'];
+
+        if(publish($article)) {
+			header("Location: create.php?s=1");
+		} else {
+			header("Location: create.php?e=1");
+		}
+        
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +85,7 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-lg-9 py-2 mx-auto">
-                <form action="create.php" method="POST">
+                <form action="create.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <h4 class="text-center">Publish New Article</h4>
                     </div>

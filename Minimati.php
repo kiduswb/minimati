@@ -11,7 +11,7 @@
     const DB_HOST = "localhost"; // Database Host
     const DB_USER = "root"; // Database Username
     const DB_PASS = ""; // Database Password
-    const DB_NAME = "minimati"; // Database Name
+    const DB_NAME = "kidus"; // Database Name
         
     /**
      * Article
@@ -26,6 +26,26 @@
         public $content;
         public $photo;
         public $timestamp;
+
+        function __construct($ID) {
+            if($ID !== 0) {
+                $result = sql_query("SELECT * FROM `blog` WHERE `ID`=$ID");
+                while($row = $result->fetch_assoc())
+                {
+                    $this->ID = $row['ID'];
+                    $this->slug = $row['slug'];
+                    $this->title = $row['title'];
+                    $this->subtitle = $row['subtitle'];
+                    $this->content = $row['content'];
+                    $this->photo = $row['photo'];
+                    $this->timestamp = $row['timestamp'];
+                }
+            }
+        }
+
+        function get_date() {
+            return date("d-M-Y h:m A");
+        }
     }
 
     # General Functions
@@ -43,7 +63,6 @@
         $result = $sql->query($query);
         $sql->close();
         return $result;
-        
     }
 
     /**
@@ -88,7 +107,20 @@
      * @return void
      */
     function publish($article) {
-        //...
+        $result = sql_query("
+            INSERT INTO `blog` VALUES(
+                $article->ID,
+                '$article->slug',
+                '$article->title',
+                '$article->subtitle',
+                '$article->content',
+                $article->timestamp,
+                '$article->photo'
+            );
+        ");
+
+        if($result) return true;
+        return false;
     }
     
     /**
@@ -98,7 +130,8 @@
      * @return void
      */
     function delete($articleID) {
-        //...
+        $article = new Article($articleID);
+        sql_query("DELETE FROM `blog` WHERE ID=$articleID");
     }
     
     /**
@@ -128,7 +161,13 @@
      * @return void
      */
     function article_count() {
-        //...
+        $result = sql_query("SELECT COUNT(*) AS `count` FROM `admin`");
+        return $result->fetch_assoc()['count'];
+    }
+
+    function fetch_upload_dir() {
+        $result = sql_query("SELECT * FROM `admin`");
+        return $result->fetch_assoc()['upload_dir'];
     }
     
     /**
@@ -137,7 +176,8 @@
      * @return void
      */
     function edit_count() {
-        //...
+        $result = sql_query("SELECT * FROM `edits`");
+        return $result->fetch_assoc()['edits'];
     }
 
     # Administrator Management
