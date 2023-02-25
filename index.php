@@ -11,6 +11,8 @@
 
 	if (!isset($_SESSION['minimati_admin'])) redir("login.php");
 
+	$recent_articles = fetch_articles(0, 10, null);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +65,7 @@
 				<div class="card bg-info text-white">
 					<div class="card-body m-3">
 						<i class="fa fa-file-alt stats-icon p-3"></i>
-						<h3 class="py-3">38 Articles Published</h3>
+						<h3 class="py-3"><?php echo article_count(); ?> Articles Published</h3>
 						<div class="text-right">
 							<a href="create.php" class="btn btn-lg btn-outline-light">Publish New &nbsp;&rarr;</a>
 						</div>
@@ -74,9 +76,9 @@
 				<div class="card bg-warning text-white">
 					<div class="card-body m-3">
 						<i class="fa fa-pencil-alt stats-icon p-3"></i>
-						<h3 class="py-3">387 Total Edits</h3>
+						<h3 class="py-3"><?php echo edit_count(); ?> Total Edits</h3>
 						<div class="text-right">
-							<a href="edit.php" class="btn btn-lg btn-outline-light">View All &nbsp;&rarr;</a>
+							<a href="edit.php" class="btn btn-lg btn-outline-light">Edit Articles &nbsp;&rarr;</a>
 						</div>
 					</div>
 				</div>
@@ -91,7 +93,7 @@
 						<h3>Recently Published</h3>
 					</div>
 					<div class="card-body">
-						<table class="table">
+						<table class="table articles">
 							<thead class="thead-dark">
 								<tr>
 								<th scope="col">Date/Time</th>
@@ -100,11 +102,18 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>22-Feb-2022, 11:59PM</td>
-									<td>Incredibly long sample blog title that needs to be shor...</td>
-									<td><a href="edit.php?ID=ID" class="btn btn-sm btn-outline-primary">Edit</a></td>
-								</tr>
+								<?php 
+									foreach($recent_articles as $ar) {
+										$date = $ar->get_date();
+										echo <<<_END
+										<tr>
+											<td>$date</td>
+											<td>$ar->title</td>
+											<td><a href="edit.php?ID=$ar->ID" class="btn btn-sm btn-outline-primary">Edit</a></td>
+										</tr>
+_END;
+									}
+								?>
 							</tbody>
 						</table><br>
 						<a href="edit.php">View All Articles &rarr;</a>
@@ -112,6 +121,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 
 	<footer class="footer">

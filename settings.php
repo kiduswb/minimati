@@ -11,6 +11,23 @@
 
 	if (!isset($_SESSION['minimati_admin'])) redir("login.php");
 
+	if(isset($_POST['updatedir'])) {
+		if(!is_dir($_POST['dir'])) redir("settings.php?de=1");
+		else {
+			update_upload_dir($_POST['dir']);
+			redir("settings.php?ds=1");
+		}
+	}
+
+	if(isset($_POST['updatepass'])) {
+		if(!admin_login($_POST['oldpassword'])) redir("settings.php?pe=1");
+		else if($_POST['newpassword'] != $_POST['newpassword2']) redir("settings.php?ne=1");
+		else {
+			update_password($_POST['newpassword']);
+			redir("settings.php?ps=1");
+		}
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,7 +139,7 @@ _END;
 _END;
 							?>
 							<div class="form-group">
-								Current Directory is <code>../assets/images/blog/</code>
+								Current Directory is <code><?php echo fetch_upload_dir(); ?></code>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" required placeholder="Enter New Directory" name="dir">
