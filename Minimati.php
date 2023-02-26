@@ -45,7 +45,7 @@
         }
 
         function get_date() {
-            return date("d M, Y h:i A");
+            return date("d M, Y h:i A", $this->timestamp);
         }
     }
 
