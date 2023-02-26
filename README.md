@@ -44,8 +44,8 @@ You can get an article's contents from the handy `Article` class. The `Article` 
 
 You use these members to display an individual article's content on your website. Please check out the 
 'example' directory to see this in action.
-<br>
-I've currently implemented this CMS in my personal website. It's been very helpful for my personal use-case.
+<br><br>
+I've currently implemented this CMS in my personal website.
 
 <b>For a simple example, check out the 'example' directory in this repo.</b>
 
