@@ -91,18 +91,24 @@
 							<?php
 								if (isset($_GET['pe'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-warning">Error - Old password not valid.</div>
+										<div class="alert alert-warning">
+										<i class="fa fa-warning"></i>
+										Error - Old password not valid.</div>
 									</div>
 _END;
 
 								else if (isset($_GET['ne'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-warning">Error - Passwords don't match.</div>
+										<div class="alert alert-warning">
+										<i class="fa fa-warning"></i>
+										Error - Passwords don't match.</div>
 									</div>
 _END;
 								else if (isset($_GET['ps'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-success">Password updated successfully.</div>
+										<div class="alert alert-success">
+										<i class="fa fa-check-circle"></i>
+										Password updated successfully.</div>
 									</div>
 _END;
 							?>
@@ -132,12 +138,16 @@ _END;
 							<?php
 								if (isset($_GET['de'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-warning">Error - Invalid or inexistent directory.</div>
+										<div class="alert alert-warning">
+										<i class="fa fa-warning"></i>
+										Error - Invalid or inexistent directory.</div>
 									</div>
 _END;
 								else if (isset($_GET['ds'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-success">Image upload directory changed successfully.</div>
+										<div class="alert alert-success">
+										<i class="fa fa-check-circle"></i>
+										Image upload directory changed successfully.</div>
 									</div>
 _END;
 							?>

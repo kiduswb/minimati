@@ -99,19 +99,25 @@
                     <?php
 						if (isset($_GET['e'])) echo <<<_END
                             <div class="form-group">
-                                <div class="alert alert-warning">Error - Unable to publish, please check your database settings.</div>
+                                <div class="alert alert-warning">
+								<i class="fa fa-warning"></i>
+								Error - Unable to publish, please check your database settings.</div>
                             </div>
 _END;
 
 						else if (isset($_GET['pe'])) echo <<<_END
                             <div class="form-group">
-                                <div class="alert alert-warning">Error - Invalid photo file format. Please upload a valid photo.</div>
+                                <div class="alert alert-warning">
+								<i class="fa fa-warning"></i>
+								Error - Invalid photo file format. Please upload a valid photo.</div>
                             </div>
 _END;
 
 						else if (isset($_GET['s'])) echo <<<_END
                             <div class="form-group">
-                                <div class="alert alert-success">Article published successfully.</div>
+                                <div class="alert alert-success">
+								<i class="fa fa-check-circle"></i>
+								Article published successfully.</div>
                             </div>
 _END;
 					?>

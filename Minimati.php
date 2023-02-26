@@ -161,7 +161,7 @@
      */
     function fetch_articles($start, $limit, $search) {
         $query = "SELECT * FROM `blog`";
-        if(!empty($search)) $query .= " WHERE `title`, `subtitle`, `content` LIKE %$search%";
+        if(!empty($search)) $query .= " WHERE (`title` LIKE '%$search%') OR (`subtitle` LIKE '%$search%') OR (`content` LIKE '%$search%')";
         $query .= " ORDER BY `timestamp` DESC LIMIT $start, $limit";
         $result = sql_query($query);
         $articles = array();
@@ -192,8 +192,10 @@
      * Returns the number of articles in the database
      * @return int
      */
-    function article_count() {
-        $result = sql_query("SELECT COUNT(*) AS `count` FROM `blog`");
+    function article_count($query = null) {
+        $qry_str = "SELECT COUNT(*) AS `count` FROM `blog`";
+        if($query != null) $qry_str .= " WHERE (`title` LIKE '%$query%') OR (`subtitle` LIKE '%$query%') OR (`content` LIKE '%$query%')";
+        $result = sql_query($qry_str);
         return $result->fetch_assoc()['count'];
     }
     

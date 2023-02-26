@@ -54,13 +54,17 @@
 							<?php
 								if (isset($_GET['e'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-warning">Error - Invalid Password</div>
+										<div class="alert alert-warning">
+										<i class="fa fa-warning"></i>
+										Error - Invalid Password</div>
 									</div>
 _END;
 
 								else if (isset($_GET['ls'])) echo <<<_END
 									<div class="form-group">
-										<div class="alert alert-success">You've been logged out.</div>
+										<div class="alert alert-success">
+										<i class="fa fa-check-circle"></i>
+										You've been logged out.</div>
 									</div>
 _END;
 							?>

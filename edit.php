@@ -96,7 +96,7 @@
 	</nav>
 
 	<div class="container py-4">
-		<?php if(!isset($_GET['ID'])) { ?>
+		<?php if(!isset($_GET['ID']) and article_count()) { ?>
 		<div class="row">
 			<div class="col-lg-12 py-2 mx-auto">
 				<form action="search.php" method="GET">
@@ -159,7 +159,22 @@ _END;
 			</div>
 
 		</div>
-		<?php } elseif(isset($_GET['ID'])) { 
+		<?php }
+
+		if(!article_count()) {
+			echo <<<_END
+			<div class="row">
+				<div class="col-lg-12 py-2 mx-auto">
+					<div class="alert alert-info">
+					<i class="fa fa-info-circle"></i>
+					No articles published yet. 
+					Feel free to create your first one.</div>
+				</div>
+			</div>
+_END;
+		}
+
+		 elseif(isset($_GET['ID'])) { 
 			$ar = new Article($_GET['ID']);	
 		?>
 		<div class="row">
@@ -172,13 +187,17 @@ _END;
                     <?php
 						if (isset($_GET['e'])) echo <<<_END
                             <div class="form-group">
-                                <div class="alert alert-warning">Error - Unable to save changes, please check your database settings.</div>
+                                <div class="alert alert-warning">
+								<i class="fa fa-warning"></i>
+								Error - Unable to save changes, please check your database settings.</div>
                             </div>
 _END;
 
 						else if (isset($_GET['s'])) echo <<<_END
                             <div class="form-group">
-                                <div class="alert alert-success">Changes saved successfully.</div>
+                                <div class="alert alert-success">
+								<i class="fa fa-check-circle"></i>
+								Changes saved successfully.</div>
                             </div>
 _END;
 					?>
