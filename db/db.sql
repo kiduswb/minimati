@@ -5,7 +5,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `admin` (`pwd_hash`, `upload_dir`, `edits`) VALUES
-('$2y$10$9kOSNNKcDj/wh4LcVZJwvun4ywsmlXnOf6SQcu0hAWTMLdCHkacfS', '../assets/images/blog/', 0);
+('$2y$10$9kOSNNKcDj/wh4LcVZJwvun4ywsmlXnOf6SQcu0hAWTMLdCHkacfS', '../assets/images/blog', 0);
 
 CREATE TABLE `blog` (
   `ID` int(11) NOT NULL,

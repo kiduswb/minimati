@@ -19,7 +19,7 @@ Here's a simple step-by-step guide to get Minimati up and running on top of your
     <li>Navigate to <code>[your website]/minimati</code> in your browser</li>
     <li>Login (default admin password is "password"), then change your password</li>
     <li><b>IMPORTANT!</b> Make sure to edit your admin settings and specify which directory you'd like to upload
-    article photos to. By default, the directory is <code>'../assets/images/blog/'</code>.</li>
+    article photos to. By default, the directory is <code>'../assets/images/blog'</code>.</li>
 </ol>
 
 After these steps, you can begin publishing blog articles to your website's server. To display 
@@ -44,8 +44,8 @@ You can get an article's contents from the handy `Article` class. The `Article` 
 
 You use these members to display an individual article's content on your website. Please check out the 
 'example' directory to see this in action.
-<br>
-I've currently implemented this CMS in my personal website. It's been very helpful for my personal use-case.
+<br><br>
+I've currently implemented this CMS in my personal website.
 
 <b>For a simple example, check out the 'example' directory in this repo.</b>
 
