@@ -45,7 +45,7 @@
         }
 
         function get_date() {
-            return date("d-M-Y h:m A");
+            return date("d M, Y h:m A");
         }
     }
 
