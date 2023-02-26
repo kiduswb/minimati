@@ -262,7 +262,7 @@ _END;
 		if(isset($_GET['ID'])) {
 			$ar->content = str_replace(array("\r", "\n"), '', $ar->content);
 			echo <<<_SCRIPT
-				<script>CKEDITOR.instances['content'].setData(HtmlSanitizer.SanitizeHtml("$ar->content"))</script>
+				<script>CKEDITOR.instances['content'].setData(HtmlSanitizer.SanitizeHtml('$ar->content'))</script>
 _SCRIPT;
 		}
 	?>
