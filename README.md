@@ -3,7 +3,7 @@
 # Minimati 
 
 Minimati is a simple, lightweight and open-source CMS for managing blog posts in your website. It's written in 
-PHP and uses a MySQL backend, so your site must use these two for its backend. Minimati is best
+PHP and uses MySQL for its database, so your site must have the ability to utilize these two. Minimati is best
 for static websites that want to add simple blogging functionality without the need to write a custom
 CMS or use something like WordPress. If you're a web developer working on static websites for your clients,
 this framework is perfect for you.
