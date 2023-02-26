@@ -19,7 +19,7 @@ Here's a simple step-by-step guide to get Minimati up and running on top of your
     <li>Navigate to <code>[your website]/minimati</code> in your browser</li>
     <li>Login (default admin password is "password"), then change your password</li>
     <li><b>IMPORTANT!</b> Make sure to edit your admin settings and specify which directory you'd like to upload
-    article photos to. By default, the directory is <code>'../assets/images/blog/'</code>.</li>
+    article photos to. By default, the directory is <code>'../assets/images/blog'</code>.</li>
 </ol>
 
 After these steps, you can begin publishing blog articles to your website's server. To display 
