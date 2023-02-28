@@ -2,6 +2,7 @@
 
     /*
      * Minimati - Lightweight and Open-Source Blogging CMS
+     * v1.0.1
      * Written by Kidus Bewket (https://kidus.ca)
      * Released under the MIT License
      */
