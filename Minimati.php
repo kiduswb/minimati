@@ -7,6 +7,13 @@
      * Released under the MIT License
      */
 
+    require_once 'Database.php';
+
+    // Check if setup has not been performed
+    if( 0 == filesize( 'Database.php' )) {
+        redir("./install/");
+    }
+    
     # EDIT THESE VALUES TO CONNECT MINIMATI TO YOUR DATABASE! #
     
     const DB_HOST = "localhost"; // Database Host
