@@ -16,7 +16,7 @@ this framework is perfect for you.</b>
 
 # Usage Guide
 
-<b>For a small practical example, please refer to the <code>examples</code> directory.</b>
+### <code>UNDER CONSTRUCTION</code>
 
 # FAQ
 
