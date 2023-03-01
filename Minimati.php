@@ -13,11 +13,6 @@
     if( '' == file_get_contents( 'Database.php' )) {
         redir("./install/");
     }
-    
-    const DB_HOST = "localhost"; // Database Host
-    const DB_USER = "root"; // Database Username
-    const DB_PASS = ""; // Database Password
-    const DB_NAME = "kidus"; // Database Name
         
     /**
      * Article

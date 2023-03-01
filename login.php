@@ -67,6 +67,14 @@ _END;
 										You've been logged out.</div>
 									</div>
 _END;
+
+								else if (isset($_GET['is'])) echo <<<_END
+									<div class="form-group">
+										<div class="alert alert-success">
+										<i class="fa fa-check-circle"></i>
+										Minimati has been installed successfully!</div>
+									</div>
+_END;
 							?>
 							<div class="form-group">
 								<input required class="form-control" type="password" name="password" placeholder="Enter Admin Password">

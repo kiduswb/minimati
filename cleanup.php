@@ -1,3 +1,6 @@
 <?php 
-    //! DO CLEANUP PROCEDURE HERE
+    //! Installation Cleanup
+    array_map('unlink', glob("./install/*.*"));
+    rmdir("./install/");
+    header("Location: login.php?is=1");
 ?>
