@@ -10,11 +10,9 @@
     require_once 'Database.php';
 
     // Check if setup has not been performed
-    if( 0 == filesize( 'Database.php' )) {
+    if( '' == file_get_contents( 'Database.php' )) {
         redir("./install/");
     }
-    
-    # EDIT THESE VALUES TO CONNECT MINIMATI TO YOUR DATABASE! #
     
     const DB_HOST = "localhost"; // Database Host
     const DB_USER = "root"; // Database Username
