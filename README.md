@@ -7,8 +7,8 @@ PHP and uses MySQL for its database, so your site must have the ability to utili
 for static websites that want to add simple blogging functionality without the need to write a custom
 CMS or use third party software. 
 
-<b>If you're a web developer working on static websites for your clients,
-this framework is perfect for you.</b>
+<b>If you're a web developer working on simple & static websites for your clients,
+this CMS is great for you.</b>
 
 # Setup Guide
 
