@@ -29,8 +29,14 @@
 _DBI;  
 
             file_put_contents('../Database.php', $db_info);
-
-            header("Location: tables.php?db=$db");
+            session_start();
+            $_SESSION['db_info'] = array(
+                'DB_HOST' => $host,
+                'DB_USER' => $username,
+                'DB_PASS' => $password,
+                'DB_NAME' => $db
+            );
+            header("Location: tables.php");
         }
         else header("Location: ./?e=1");
     }
