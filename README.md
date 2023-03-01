@@ -10,8 +10,13 @@ this CMS is great for you.</b>
 
 # Setup Guide
 
-Simply clone this repo in the directory you want your CMS to be stored in inside your server. Then, simply 
-go that directory to start the installation process.
+Simply clone this repo in the directory you want your CMS to be stored in inside your server. For example:
+
+<code>'[your-website]/cms'</code>
+
+Afterwards, simply navigate to that directory in your browser to start the installation process. The default
+image upload folder is <code>../assets/images/blog</code>. You can change this in the settings menu after you
+finish installing Minimati.
 
 # Usage Guide
 
