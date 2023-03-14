@@ -1,6 +1,7 @@
 <?php 
-
-    require_once 'tables.php';
+    // Failsafe
+    session_start();
+    session_destroy();
 
     if(isset($_POST['install'])) {
         
