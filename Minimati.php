@@ -10,9 +10,8 @@
     require_once 'Database.php';
 
     // Check if setup has not been performed
-    $db_file = file("Database.php");
-    if($db_file[0] != '<?php') redir("./install/");
-        
+    if(!defined(DB_HOST)) redir("./install");
+
     /**
      * Article
      * Contains details of a single blog article
