@@ -2,7 +2,7 @@
 
     /*
      * Minimati - Lightweight and Open-Source Blogging CMS
-     * v1.0.1
+     * v1.0.2
      * Written by Kidus Bewket (https://kidus.ca)
      * Released under the MIT License
      */
@@ -10,9 +10,8 @@
     require_once 'Database.php';
 
     // Check if setup has not been performed
-    if( '' == file_get_contents( 'Database.php' )) {
-        redir("./install/");
-    }
+    $db_file = file("Database.php");
+    if($db_file[0] != '<?php') redir("./install/");
         
     /**
      * Article
