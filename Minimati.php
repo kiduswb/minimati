@@ -10,7 +10,7 @@
     require_once 'Database.php';
 
     // Check if setup has not been performed
-    if(!defined(DB_HOST)) redir("./install");
+    if(!defined('DB_HOST')) redir("./install");
 
     /**
      * Article
