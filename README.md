@@ -10,19 +10,62 @@ this CMS is great for you.</b>
 
 # Setup Guide
 
-Simply clone this repo in the directory you want your CMS to be stored in inside your server. For example:
+Simply clone this repo in the directory you want your Minimati installtion to be stored in. For example:
 
-<code>'[your-website]/cms'</code>
+<code>'[your-website]/minimati'</code>
 
-Afterwards, simply navigate to that directory in your browser to start the installation process. The default
-image upload folder is <code>../assets/images/blog</code>. You can change this in the settings menu after you
-finish installing Minimati.
+Afterwards, simply navigate to that directory in your browser to start the installation process. 
+
+<b>Important Note</b>
+
+The default image upload folder is <code>../assets/images/blog</code>. You can change this in the Settings menu after you finish installing Minimati and start using it.
 
 # Usage Guide
 
-### <code>UNDER CONSTRUCTION</code>
+Here's some example code to show you how to work with Minimati:
 
-<b>Please refer to the 'examples' directory to see a simple demonstration of Minimati's features.</b>
+*Loading all articles:*
+
+```php
+<?php
+    require_once '[your-website]/[installation-dir]/Minimati.php';
+
+    // Fetch an array of Article objects
+    // The Article object contains data on a single blog post
+    $start = 0; // Starting point for fetching articles, 0 indicates the latest
+    $limit = 10; // How many articles do you wanna fetch?
+    $search = ""; // A string query to search thru articles
+    $articles  = fetch_articles($start, $limit, $search);
+
+    foreach($articles as $ar) {
+        // Article Data
+        /*
+            Article::ID;
+            Article::slug;
+            Article::title;
+            Article::subtitle;
+            Article::content;
+            Article::photo;
+            Article::timestamp;
+         */
+        //...
+    }
+?>
+```
+
+You can implement pagination yourself by utilizing the `$start` and `$limit` variables.
+
+*Loading a single article:*
+
+```php
+<?php
+    require_once '[your-website]/[installation-dir]/Minimati.php';
+
+    $ID = 0; // Assign your article's unique identifier number (ID) here
+    $article = new Article($ID);
+    // ...
+?>
+```
 
 # FAQ
 
